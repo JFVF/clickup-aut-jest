@@ -1,0 +1,20 @@
+{
+  "name": "TestProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jest-worker": "^25.1.0",
+    "puppeteer": "^2.1.0",
+    "puppeteer-ie": "^0.5.7"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
