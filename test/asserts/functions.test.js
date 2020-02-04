@@ -22,4 +22,3 @@ test('User should be juan perez', () => {
   test('There is no I in team', () => {
     expect('teami').not.toMatch(/I/);
   });
-    
