@@ -7,7 +7,7 @@ const path = require('../constants/paths');
 const namesConstants = require('../constants/names');
 
 let browser;
-test('The user should create a list', async () => {
+test('The user should create a task', async () => {
   jest.setTimeout(30000);
   browser = await puppeteer.launch(
     {
@@ -28,6 +28,10 @@ test('The user should create a list', async () => {
   await page.type(dashboardPage.listNameInput, namesConstants.LIST_NAME);
   await page.keyboard.press('Enter');
   await page.waitFor(dashboardPage.checkName);
-  await expect(await page.$eval(dashboardPage.checkName, e => e.innerText)).toMatch(namesConstants.LIST_NAME);
+  await page.click(boardPage.nameTaskByListTabInput);
+  await page.type(boardPage.nameTaskByListTabInput, namesConstants.ASSERT_TASK);
+  await page.keyboard.press('Enter');
+  await page.waitFor(boardPage.nameTask);
+  await expect(await page.$eval(boardPage.nameTask, e => e.innerText)).toMatch(namesConstants.ASSERT_TASK);
   await browser.close();
 });

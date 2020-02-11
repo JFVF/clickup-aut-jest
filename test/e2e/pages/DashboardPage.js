@@ -1,5 +1,5 @@
 class DashboardPage {
-  
+
   get addListButton() { return ('div[class = "sidebar-section__plus-icon icon cu-dropdown__toggle"]'); }
 
   get newListIcon() { return ('div[class = "cu-dropdown-list-item__icon cu-dropdown-list-item__icon_new-list icon ng-star-inserted"]'); }
@@ -10,6 +10,7 @@ class DashboardPage {
 
   get loginButton() { return ('button#login-submit'); }
 
-  get checkName() { return ('div[class = "cu-list-group__name"]'); }  
+  get checkName() { return ('div[class = "cu-list-group__name"]'); }
 }
+
 module.exports = new DashboardPage();
