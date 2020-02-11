@@ -2,7 +2,8 @@ const puppeteer = require('puppeteer');
 const loginPage = require('../pages/loginPage');
 const user = require('../constants/user');
 const path = require('../constants/paths');
-const app = 'https://app.clickup.com/';
+const nameElements = require('../constants/names');
+const dashboardPage = require('../pages/DashboardPage');
 let browser;
 
 test('The user should be logged', async () => {
@@ -14,13 +15,12 @@ test('The user should be logged', async () => {
   );
 
   const page = await browser.newPage();
-  await page.goto(app);
-  await page.click(loginPage.emailInput);
+  await page.goto(path.APP);
   await page.type(loginPage.emailInput, user.USER_NAME);
   await page.click(loginPage.passwordInput);
   await page.type(loginPage.passwordInput, user.PASSWORD_USER);
   await page.click(loginPage.loginButton);
-  await page.screenshot({path: path.SCREENSHOT_LOGIN});
-
+  await page.waitFor(dashboardPage.addListButton);
+  await expect(page.title()).resolves.toMatch(nameElements.ASSERT_DASHBOARD);
   await browser.close();
 });
