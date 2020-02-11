@@ -25,7 +25,7 @@ test('The user should create a list', async () => {
   await page.waitFor(dashboardPage.newListIcon);
   await page.click(dashboardPage.newListIcon);
   await page.type(dashboardPage.listNameInput, namesConstants.LIST_NAME);
-  await page.keyboard.press('Enter');
+  await page.keyboard.press('Enter'); 
   await page.waitFor(dashboardPage.checkName);
   await expect(await page.$eval(dashboardPage.checkName, e => e.innerText)).toMatch(namesConstants.LIST_NAME);
   await browser.close();
