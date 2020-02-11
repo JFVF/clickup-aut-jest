@@ -1,8 +1,10 @@
 
-class loginPage {
+class LoginPage {  
   get emailInput() { return ('input#email-input'); }
+
   get passwordInput() { return ('input#password-input'); }
-  get loginButton() { return ('button#login-submit'); }
- 
+
+  get loginButton() { return ('button#login-submit'); }  
 }
-module.exports = new loginPage();
+
+module.exports = new LoginPage();
