@@ -1,5 +1,5 @@
 const LIST_NAME = 'List for testing';
-const ASSERT_DASHBOARD = 'All Folders | test (List)';
+const ASSERT_DASHBOARD = 'SPACE';
 const ASSERT_TASK = 'Task for testing';
 
 module.exports = {

@@ -11,6 +11,8 @@ class DashboardPage {
   get loginButton() { return ('button#login-submit'); }
 
   get checkName() { return ('div[class = "cu-list-group__name"]'); }
+
+  get subHeaderTitle() { return ('div[class = "sidebar-section__subheader-title"]'); }
 }
 
 module.exports = new DashboardPage();

@@ -6,21 +6,23 @@ const nameElements = require('../constants/names');
 const dashboardPage = require('../pages/DashboardPage');
 let browser;
 
-test('The user should be logged', async () => {
+describe('The user logs to ClickUp', async () => {
   jest.setTimeout(30000);
-  browser = await puppeteer.launch(
-    {
-      headless: false
-    }
-  );
+  test('The user should be logged', async () => {
+    browser = await puppeteer.launch(
+      {
+        headless: true
+      }
+    );
 
-  const page = await browser.newPage();
-  await page.goto(path.APP);
-  await page.type(loginPage.emailInput, user.USER_NAME);
-  await page.click(loginPage.passwordInput);
-  await page.type(loginPage.passwordInput, user.PASSWORD_USER);
-  await page.click(loginPage.loginButton);
-  await page.waitFor(dashboardPage.addListButton);
-  await expect(page.title()).resolves.toMatch(nameElements.ASSERT_DASHBOARD);
-  await browser.close();
+    const page = await browser.newPage();
+    await page.goto(path.APP);
+    await page.type(loginPage.emailInput, user.USER_NAME);
+    await page.click(loginPage.passwordInput);
+    await page.type(loginPage.passwordInput, user.PASSWORD_USER);
+    await page.click(loginPage.loginButton);
+    await page.waitFor(dashboardPage.addListButton);
+    await expect(await page.$eval(dashboardPage.subHeaderTitle, e => e.innerText)).toMatch(nameElements.ASSERT_DASHBOARD);
+    await browser.close();
+  });
 });
