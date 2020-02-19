@@ -15,13 +15,12 @@ describe('The user creates a task', async () => {
         headless: true
       }
     );
-
     const page = await browser.newPage();
     await page.goto(path.APP);
     await page.type(loginPage.emailInput, user.USER_NAME);
     await page.click(loginPage.passwordInput);
     await page.type(loginPage.passwordInput, user.PASSWORD_USER);
-    await page.click(loginPage.loginButton);;
+    await page.click(loginPage.loginButton);
     await page.waitFor(dashboardPage.addListButton);
     await page.click(dashboardPage.addListButton);
     await page.waitFor(dashboardPage.newListIcon);

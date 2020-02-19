@@ -13,6 +13,8 @@ class DashboardPage {
   get checkName() { return ('div[class = "cu-list-group__name"]'); }
 
   get subHeaderTitle() { return ('div[class = "sidebar-section__subheader-title"]'); }
+
+  get boardTab() { return ('cu-data-view-item > a > div > cu-editable'); }
 }
 
 module.exports = new DashboardPage();

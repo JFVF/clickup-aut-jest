@@ -1,14 +1,14 @@
-class TaskPage {
-  
-  get closeTaskIcon() { return $('//div[@cutooltip=\'Close task\']');}
+// class TaskPage {
 
-  get taskTitle() { return $('div[class = cu-panel-board__clickable-name]');}
+//   get closeTaskIcon() { return $('//div[@cutooltip=\'Close task\']');}
 
-  get taskNameInput() { return $('div[class = cu-panel-board__input]');}
+//   get taskTitle() { return $('div[class = cu-panel-board__clickable-name]');}
 
-  get taskDescription() { return $('div[class = ql-editor ql-blank focus-visible]');}
+//   get taskNameInput() { return $('div[class = cu-panel-board__input]');}
 
-  get closeTaskModal() { return $('div[class = task-close cu-hidden-print ng-trigger ng-trigger-loading]');}
-}
+//   get taskDescription() { return $('div[class = ql-editor ql-blank focus-visible]');}
 
-module.exports = new TaskPage();
+//   get closeTaskModal() { return $('div[class = task-close cu-hidden-print ng-trigger ng-trigger-loading]');}
+// }
+
+// module.exports = new TaskPage();
