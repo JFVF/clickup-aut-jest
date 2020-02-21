@@ -12,9 +12,7 @@ describe('The user logs to ClickUp', async () => {
     browser = await puppeteer.launch(
       {
         headless: true
-      }
-    );
-
+      })
     const page = await browser.newPage();
     await page.goto(path.APP);
     await page.type(loginPage.emailInput, user.USER_NAME);

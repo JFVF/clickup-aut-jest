@@ -5,15 +5,19 @@
   "main": "index.js",
   "dependencies": {
     "expect-puppeteer": "^4.4.0",
+    "jest-allure-reporter": "^1.2.3",
     "jest-worker": "^25.1.0",
-    "puppeteer": "^2.1.0",
-    "puppeteer-ie": "^0.5.7"
+    "puppeteer": "^2.1.1",
+    "puppeteer-ie": "^0.5.7",
+    "@types/allure-js-commons": "^0.0.0"
   },
   "devDependencies": {
-    "jest": "^25.1.0"
+    "jest": "^25.1.0",
+    "jest-allure": "^0.1.1"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "allure-report": "allure serve"
   },
   "keywords": [],
   "author": "",
