@@ -13,7 +13,7 @@ describe('The user moves a task from To do status to COMPLETE status', async () 
   beforeAll(async () => {
     browser = await puppeteer.launch(
       {
-        headless: false,
+        headless: true,
         args: ['--start-fullscreen']
       }
     );
@@ -60,6 +60,12 @@ describe('The user moves a task from To do status to COMPLETE status', async () 
     await page.mouse.move(boundingBoxDestinationComplete.x, boundingBoxDestinationComplete.y);
     await page.mouse.up();
     await expect(await page.$eval(boardPage.taskCard, e => e.innerText)).toMatch(namesConstants.ASSERT_TASK + ' 3');
+  });
+  afterEach(async () => {
+    await (await page.$(dashboardPage.taskFromSpace)).click({ button: 'right' });
+    await page.click(dashboardPage.deleteTaskIcon);
+    await page.waitFor(dashboardPage.deleteButton);
+    await page.click(dashboardPage.deleteButton);
     await browser.close();
   });
 });
