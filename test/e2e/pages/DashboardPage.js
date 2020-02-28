@@ -10,11 +10,17 @@ class DashboardPage {
 
   get loginButton() { return ('button#login-submit'); }
 
-  get checkName() { return ('div[class = "cu-list-group__name"]'); }
+  get checkName() { return ('a[class = "nav-section__name"]'); }
 
   get subHeaderTitle() { return ('div[class = "sidebar-section__subheader-title"]'); }
 
   get boardTab() { return ('cu-data-view-item > a > div > cu-editable'); }
+
+  get taskFromSpace() { return ('a[class = nav-section__name]'); }
+
+  get deleteTaskIcon() { return ('a[cutooltip = Delete]'); }
+
+  get deleteButton() { return ('button[class = "cu-btn cu-btn_danger"]'); }
 }
 
 module.exports = new DashboardPage();
