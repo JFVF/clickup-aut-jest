@@ -4,7 +4,7 @@ class LoginPage {
 
   get passwordInput() { return ('input#password-input'); }
 
-  get loginButton() { return ('button#login-submit'); }
+  get loginButton() { return ('#login-submit'); }
 }
 
 module.exports = new LoginPage();
